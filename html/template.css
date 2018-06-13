@@ -1,0 +1,166 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+body {
+  padding-top: 3.5rem;
+}
+
+/*
+ * Typography
+ */
+
+h1 {
+  padding-bottom: 9px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.form-group.required .control-label:after {
+    color: #d00;
+    content: "*";
+    position: absolute;
+    margin-left: 4px;
+    top: -6px;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  border-right: 1px solid #eee;
+  padding: 0px;
+  background-color: #4d394b;
+}
+
+.sidebar div {
+  display: block;
+  background: grey;
+  color: white;
+}
+
+.sidebar div div {
+  font-weight: 900;
+  font-size:27pt;
+  background-color: rgb(0,169,224);
+}
+
+.sidebar .nav {
+  margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
+  width: 100%;
+}
+
+.sidebar .nav-item + .nav-item {
+  margin-left: 0;
+}
+
+.sidebar .nav-link {
+  border-radius: 0;
+}
+
+.container-fluid {
+  position: absolute;
+  top:0px;
+}
+
+/*
+ * Dashboard
+ */
+
+/* Placeholders */
+.placeholders {
+  padding-bottom: 3rem;
+}
+
+.placeholder img {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.row nav{
+  width: 15%;
+}
+
+.nav-link {
+  color: rgb(202,196,201);
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.btn-success{
+  border-color:#4C9689 !important;
+  background-color: #4C9689;
+}
+
+.btn-success:hover{
+  border-color:#4C9689 !important;
+  background-color: #4C9689;
+}
+
+.btn-success:not([disabled]):not(.disabled).active, .btn-success:not([disabled]):not(.disabled):active, .show>.btn-success.dropdown-toggle {
+  box-shadow: 0 0 0 0.2rem #62bbac !important;
+  background-color: #4C9689;
+}
+
+.btn-primary{
+  border-color:#4d394b !important;
+  background-color: #4d394b;
+}
+
+.btn-primary:hover{
+  border-color:#4d394b !important;
+  background-color: #4d394b;
+}
+
+.btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+  box-shadow: 0 0 0 0.2rem #7d607a !important;
+  border-color:#7d607a !important;
+  background-color: #4d394b;
+}
+
+.nav-link.active {
+  background-color: #4C9689 !important;
+  color: #FFFFFF;
+}
+
+.nav-link.active:hover {
+  background-color: #4C9689 !important;
+  color: #FFFFFF;
+}
+
+.nav-link:hover{
+  background-color: #3E313C !important;
+  color: rgb(202,196,201)
+}
+
+.table-hover tbody tr:hover {
+  background-color: #4d394b;
+  color:white;
+}
+
+.userType{
+  display: none;
+}
+
+#student{
+  display:block;
+}
+
+#zamestnanec{
+  display:none;
+}
+
