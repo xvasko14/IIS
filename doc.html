@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset="utf-8/>
+    <title>Projekt IIS</title>
+    <style type="text/css">
+    	table { border-collapse: collapse; }
+    	td, th { border: 1px solid black; padding: 0.3em 0.5em; text-align: left; }
+    	dt { font-weight: bold; margin-top: 0.5em; }
+    </style>
+</head>
+<body>
+
+<!-- Zkontrolujte prosím nastavení kódování v hlavièce dokumentu 
+     podle pouitého editoru -->
+
+<h1>Pøihlašování do pøedmìtù</h1> <!-- Nahradte názvem svého zadání -->
+
+<dl>
+	<dt>Autori</dt>
+	<dd>První jméno <!-- Nahraïte skuteènım jménem a e-mailem autora a popisem èinnosti -->
+	    <a href="mailto:xvasko12@stud.fit.vutbr.cz">xvasko12@stud.fit.vutbr.cz</a>		
+	</dd>
+	<dd>Druhé jméno <!-- Nahraïte skuteènım jménem a e-mailem autora a popisem èinnosti -->
+	    <a href="mailto:xvasko14@stud.fit.vutbr.cz">xvasko14@stud.fit.vutbr.cz</a>
+	</dd>
+<dd>Tretí jméno <!-- Nahraïte skuteènım jménem a e-mailem autora a popisem èinnosti -->
+	    <a href="mailto:xtamas01@stud.fit.vutbr.cz">xtamas01@stud.fit.vutbr.cz</a>
+	</dd>
+
+	<dt>URL aplikácia</dt>
+	<dd><a href="http://www.stud.fit.vutbr.cz/~xvasko12/IIS/index.php">http://www.stud.fit.vutbr.cz/~xvasko12/IIS/index.php</a></dd>
+  <dt>Inicializácia databázy</dt>
+  <dd><a href="http://www.stud.fit.vutbr.cz/~xvasko12/IIS/db_init.php">
+  http://www.stud.fit.vutbr.cz/~xvasko12/IIS/db_init.php</a></dd>
+</dl>
+
+<h2>Uivatelia sıstému pre testovanie</h2>
+<table>
+<tr><th>Login</th><th>Heslo</th><th>Role</th></tr>
+<tr><td>admin</td><td>admin</td><td>Administrátor</td></tr>
+<tr><td>smrcka</td><td>smrcka</td><td>Garant</td></tr>
+<tr><td>xvasko12</td><td>hi</td><td>Študent BGR2016</td></tr>
+<tr><td>xtamas01</td><td>pass</td><td>Študent BIT2016</td></tr>
+</table>
+
+<h2>Implementácia</h2>
+<p>
+Pre implementáciu grafického uivate¾ského rozhrania sme pouili CSS framework <a href="https://getbootstrap.com/">Bootstrap</a>.
+Pred implementáciou projektu sme si vytvorili USE-CASE diagram pod¾a ktorého sme potom implementovali jednotlivé monosti pre kadú rolu.<br /><br />
+Jednotlivé monosti toho, èo môe robit konkretná rola, su rozpisané tu:<br /></div>
+Admin<ul><li>Študenti - Môe prida, vymazat alebo upravi študenta.</li>
+                <li>Predemty - Môe prida predmet k oboru, upravi predmet pod¾a oboru a zmaza predmet v obore aj s prihlasenımi študentmi. </li>
+<li>Pravidlá - Môe prida pravidlo, upravi a vymaza pravidlo so všetkımi pouivanımi študijnımi programami. </li>
+<li>Zmena informácii o osobe - Môe upravi informácie o sebe(email, heslo, adresa, mesto, psè). </li>
+                <li>Študíjne programy - Môe prida študíjny program s danım kreditovım pravidlom, upravi študíjny program a zmaza študíjny program so študentami študujúcimi v danom programe.</li></ul>
+
+Garant <ul><li>Predmet - Môe prida predmet, upravi a zmaza predmet.</li>
+ <li>Študíjne programy - Môe upravova, nemôe maza ani vytvára nové programy.</li>
+<li>Zmena informácii o osobe - Môe upravi informácie o sebe(email, heslo, adresa, mesto, psè). </li>
+ </ul>
+
+Študent <ul><li> Registrácia predmetu - Môe si registrova a odregistrova predmet z ponuky za podmienok dodrania kreditového stropu a minimálneho poètu kreditov na semester (15).</li>
+ <li>Preh¾ad štúdia - Môe zobrazi aktuálny preh¾ad svojho štúdia na fakulte.</li>
+ <li>Preh¾ad zapisanıch predmetov - Môe zobrazi aktuálny preh¾ad registrovanıch predmetov v tomto akademickom roku.</li>
+<li>Zmena informácii o osobe - Môe upravi informácie o sebe(email, heslo, adresa, mesto, psè). </li>
+ </ul>
+
+<table>
+  <tbody><tr>
+    <td>create-field.php<br>create-rule.php<br>create-subj.php<br>create-user.php<br></td>
+<td>Vytvorenie študijného programu, pravidla, predmetu a pouivate¾a(študent).<br>
+  </td></tr>
+  <tr>
+    <td>edit-field.php<br>edit-subj.php<br>edit-rule.php<br></td>
+    <td>Úprava študijného programu, pravidla a predmetu.<br></td>
+  </tr>
+  <tr>
+    <td>list-field.php<br>list-subj.php<br>list-rules.php<br>list-study.php<br></td>
+    <td>Vıpis študijného programu, pravidiel, štúdia a predmetov.<br></td>
+  </tr>
+  <tr>
+    <td>head.php<br></td>
+    <td>Jednotnı hlavièkovı subor.<br></td>
+  </tr>
+  <tr>
+    <td>index.php</td>
+    <td>Prihlasovacia stránka a zaroveò úvodná stránka pre kadı tip uivate¾a.<br></td>
+  </tr>
+  <tr>
+    <td>reg-subj.php</td>
+    <td>Registrácia predmetov.<br></td>
+  </tr>
+  <tr>
+    <td>user-mntc.php</td>
+    <td>Správa pouivate¾ov.<br></td>
+  </tr>
+  <tr>
+    <td>/html/php</td>
+    <td>V prieèinku sa nachádza správa celého informaèného systému pod¾a typu pouivate¾a(admin.php, class.php, garant.php, logout.php, session.php).<br></td>
+  </tr>
+</tbody></table>
+
+</p>
+
+<h2>Inštalácia</h2>
+<ul>
+<li>Inštaláciu systému na serveru eva robíme tak, e rozbalíme archív v prieèinku WWW a nastavíme práva. Databázu mysql je potrebné inicializova spustením php skriptu vo webovom prehliadaèi, jedná sa o súbor db_init.php. Neexistuje spôsob inicializácie prázdnej databázy iba so správcom. Pre tento úèel staèí zmaza všetky pravidlá.</li>
+<li>Stránky nevyadujú iadnı špecialnı software pre spustenie. Eva je dostaèujúca- PHP 5.6/PHP 7 a MySQL 5.6  </li>
+</ul>
+
+<h2>Známé problémy</h2>
+<p>Problém s php skriptom db_init.php je v nedostatoènıch právach pre pouívanie MySQLi funkcií, preto je potrebné poui webovı prehliadaè.
+</p>
+
+</body>
+</html>
